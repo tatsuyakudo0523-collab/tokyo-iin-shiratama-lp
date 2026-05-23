@@ -194,6 +194,100 @@
     border-color: var(--blue-200); color:var(--blue-700); background:var(--sky-50);
   }
 
+  /* Campaign block */
+  .campaign{
+    margin: 6px 26px 0;
+    border: 1px solid var(--blue-700);
+    background: #fff;
+    position: relative;
+    padding: 22px 22px 24px;
+  }
+  .campaign::before, .campaign::after{
+    content:""; position:absolute; left:-1px; right:-1px; height:6px;
+    background:
+      linear-gradient(90deg, var(--blue-700) 0 8px, transparent 8px) 0 0/16px 100% repeat-x;
+  }
+  .campaign::before{ top:-1px; }
+  .campaign::after { bottom:-1px; transform: scaleY(-1); }
+  .campaign .cap{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-family:"Shippori Mincho", serif;
+    font-size:13px; color:var(--blue-700); letter-spacing:.12em;
+  }
+  .campaign .cap::before, .campaign .cap::after{
+    content:""; width:18px; height:1px; background:var(--blue-700);
+  }
+  .campaign .head-ja{
+    margin-top:10px;
+    text-align:center;
+    font-family:"Shippori Mincho",serif;
+    font-size:16px; line-height:1.5; color:var(--ink); letter-spacing:.04em;
+  }
+  .campaign .head-ja b{ color:var(--blue-700); font-weight:500; }
+  .campaign .price-wrap{
+    margin-top:14px; text-align:center;
+    display:flex; align-items:baseline; justify-content:center; gap:10px;
+  }
+  .campaign .yen{
+    font-family:"Cormorant Garamond", serif;
+    font-size:28px; color:var(--blue-700); line-height:1;
+  }
+  .campaign .num-big{
+    font-family:"Cormorant Garamond", serif;
+    font-weight:500;
+    font-size:64px; color:var(--blue-700); line-height:.9;
+    letter-spacing:.01em;
+  }
+  .campaign .unit{
+    font-family:"Shippori Mincho",serif;
+    font-size:14px; color:var(--ink-2);
+  }
+  .campaign .cond{
+    margin-top:6px; text-align:center;
+    font-size:11.5px; color:var(--ink-3); letter-spacing:.08em;
+  }
+  .campaign .compare{
+    margin-top:14px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-family:"Cormorant Garamond", serif; font-size:14px; color:var(--ink-3);
+    letter-spacing:.04em;
+  }
+  .campaign .compare .strike{
+    text-decoration: line-through;
+    text-decoration-color: rgba(107,117,145,.6);
+  }
+  .campaign .compare .arr{ color:var(--blue-700); }
+  .campaign .compare .now{
+    color:var(--blue-700); font-size:18px;
+  }
+
+  /* checklist row */
+  .hero-checklist{
+    margin: 24px 26px 0;
+    display:grid; grid-template-columns: 1fr 1fr; gap: 10px 16px;
+  }
+  .hero-checklist .ck{
+    display:flex; align-items:flex-start; gap:8px;
+    font-size:12.5px; color:var(--ink); line-height:1.5;
+    font-family:"Shippori Mincho",serif;
+  }
+  .hero-checklist .ck svg{
+    width:14px; height:14px; flex-shrink:0; margin-top:3px; color:var(--blue-700);
+  }
+  .hero-checklist .ck.wide{ grid-column: 1 / -1; }
+
+  .hero-cue{
+    margin: 28px 26px 14px;
+    text-align:center;
+    font-family:"Shippori Mincho",serif; font-size:13px; color:var(--ink-2);
+    letter-spacing:.08em;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+  }
+  .hero-cue::before, .hero-cue::after{
+    content:""; width:24px; height:1px; background:var(--blue-200);
+  }
+  .hero-cue .tri{ color:var(--blue-700); }
+
   /* Hero CTAs */
   .hero-cta{ padding: 0 26px 56px; }
   .cta-stack{ display:flex; flex-direction:column; gap:12px; }
@@ -746,24 +840,51 @@
         <span class="dot"></span>
         <span class="txt">Glutathione Therapy</span>
       </div>
-      <img src="assets/hero-portrait.png" alt="" />
+      <img src="assets/portrait-serene.png" alt="" style="object-position: 45% 25%;" />
     </div>
 
-    <div class="hero-copy">
-      <div class="lang">Tokyo Clinic Beauty</div>
+    <div class="hero-copy" style="padding-bottom:18px;">
+      <div class="lang">東京医院 ─ Tokyo Clinic Beauty</div>
       <h1 class="display">
         内側から、<br />
         <span class="em">透明感</span>のある<br />
         明るさへ。
       </h1>
-      <div class="sub-en">─ 白玉注射 / Shiratama Injection</div>
-
-      <div class="meta">
-        <span class="pill blue">JR新大久保駅 徒歩1分</span>
-        <span class="pill">日 / 中 / 英 / 韓 / 越</span>
-        <span class="pill">完全予約制</span>
+      <div class="sub-en" style="display:flex; align-items:center; gap:10px;">
+        <span style="color:var(--blue-200);">＼</span>
+        <span class="mincho" style="font-family:'Shippori Mincho',serif; color:var(--ink); font-size:18px; letter-spacing:.18em;">白玉注射</span>
+        <span style="color:var(--blue-200);">／</span>
       </div>
     </div>
+
+    <!-- Campaign price -->
+    <div class="campaign">
+      <div class="cap">CAMPAIGN ／ 初回限定</div>
+      <div class="head-ja">初回限定キャンペーン<br /><b>実施中</b></div>
+      <div class="price-wrap">
+        <span class="yen">¥</span>
+        <span class="num-big">1,980</span>
+        <span class="unit">─</span>
+      </div>
+      <div class="cond">税込・1回／初診の方限定</div>
+      <div class="compare">
+        <span>通常価格</span>
+        <span class="strike">¥3,300</span>
+        <span class="arr">→</span>
+        <span class="now">¥1,980</span>
+      </div>
+    </div>
+
+    <!-- Checklist -->
+    <div class="hero-checklist">
+      <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>施術時間 約 10〜15 分</div>
+      <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>ダウンタイム 基本なし</div>
+      <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>当日施術 OK</div>
+      <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>JR新大久保駅 徒歩1分</div>
+      <div class="ck wide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>日本語 / 中国語 / 英語 / 韓国語 / ベトナム語 対応</div>
+    </div>
+
+    <div class="hero-cue"><span class="tri">▼</span>今すぐご予約・ご相談ください<span class="tri">▼</span></div>
 
     <div class="hero-cta">
       <div class="cta-stack">
@@ -772,8 +893,20 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           </span>
           <span class="body">
-            <span class="label">いますぐ電話する ／ 日本語</span>
+            <span class="label">いますぐ電話する</span>
             <span class="num">03-5358-9892</span>
+            <span class="label" style="margin-top:2px; opacity:.7;">日本語</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="btn btn-tel" href="tel:0353589893" style="background:#0c1736;">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          </span>
+          <span class="body">
+            <span class="label">いますぐ電話する</span>
+            <span class="num">03-5358-9893</span>
+            <span class="label" style="margin-top:2px; opacity:.7;">外国語 ／ 中・英・韓・越</span>
           </span>
           <span class="arrow">→</span>
         </a>
@@ -782,13 +915,17 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
           </span>
           <span class="body">
-            <span class="label">WEBで予約する ／ 24h</span>
-            <span class="num" style="font-size:15px;">オンライン予約フォーム</span>
+            <span class="label">WEBで 24 時間予約する</span>
+            <span class="num" style="font-size:15px;">ご予約ページへ</span>
           </span>
           <span class="arrow">→</span>
         </a>
       </div>
-      <p class="disclaim">※自由診療となります／効果には個人差があります</p>
+      <p class="disclaim" style="text-align:left; line-height:1.85;">
+        ※自由診療となります／効果には個人差があります<br />
+        ※初回限定価格は、当院での白玉注射（白玉点滴）を初めてご利用の方が対象です<br />
+        ※未承認医薬品等を使用しています（詳細は下記）
+      </p>
     </div>
   </section>
 
